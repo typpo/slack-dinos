@@ -23,9 +23,11 @@ def get_dinopix_resp(text):
     url = 'http://dinosaurpictures.org/%s-pictures' % name
     return {
         'attachments': [
-            'text': '<%s|*%s*>' % (url, name),
-            'color': 'red',
-            'image_url': obj['pics'][0]['url'],
+            {
+                'text': '<%s|*%s*>' % (url, name),
+                'color': 'red',
+                'image_url': obj['pics'][0]['url'],
+            },
         ],
     }
 
