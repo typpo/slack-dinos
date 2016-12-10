@@ -24,8 +24,7 @@ def get_dinopix_resp(text):
     return {
         'attachments': [
             {
-                'text': '<%s|*%s*>' % (url, name),
-                'color': 'red',
+                'text': '*<%s|%s>*' % (url, name),
                 'image_url': obj['pics'][0]['url'],
             },
         ],
