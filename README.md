@@ -1,4 +1,4 @@
-# slack-dinopix
+# slack-dinos
 
 Get a random image from DinosaurPictures.org in a Slack Channel, with Slack Outgoing WebHooks.  Heavily based on [slack-imgur](https://github.com/juanpabloaj/slack-imgur).
 
@@ -6,7 +6,7 @@ Get a random image from DinosaurPictures.org in a Slack Channel, with Slack Outg
 
 ## Usage
 
-Create a [Slack Outgoing WebHooks][webhook], select a channel, set a trigger word and add [slack-dinopix.herokuapp.com][slack-imgur] to URL(s) field.
+Create a [Slack Outgoing WebHooks][webhook], select a channel, set a trigger word and add [slack-dinos.herokuapp.com][slack-imgur] to URL(s) field.
 
 ![img](http://i.imgur.com/79u5e7L.png)
 

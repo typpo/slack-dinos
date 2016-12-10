@@ -16,21 +16,28 @@ app = Flask(__name__)
 app.debug = True
 
 
-def get_dinopix_image(text):
+def get_dinopix_resp(text):
     resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random').read()
     obj = json.loads(resp)
     name = obj['name']
     url = 'http://dinosaurpictures.org/%s-pictures' % name
-    return '%s: %s' % (name, url)
+    return {
+        'text': '*%s*: %s' % (name, url),
+        'fields': [
+            {
+                'image_url': obj['pics'][0]['url'],
+            }
+        ],
+    }
 
 @app.route('/', methods=['GET', 'POST'])
 def return_dinopix_image():
     if request.method == 'POST':
         text = request.form['text']
-        req = {'text': get_dinopix_image(text)}
+        req = get_dinopix_resp(text)
         return jsonify(**req)
     elif request.method == 'GET':
-        return get_dinopix_image('')
+        return jsonify(get_dinopix_resp(''))
 
 
 if __name__ == '__main__':
