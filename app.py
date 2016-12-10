@@ -24,7 +24,8 @@ def get_dinopix_resp(text):
     return {
         'attachments': [
             {
-                'text': '*<%s|%s>*' % (url, name),
+                'text': '*%s* lived in the %s and was a %s. It resided in %s.\n%s' \
+                        % (name, obj['period'], obj['eats'], ', '.join(obj['regions']), url),
                 'image_url': obj['pics'][0]['url'],
             },
         ],
