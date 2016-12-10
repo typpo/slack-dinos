@@ -26,7 +26,7 @@ def get_dinopix_resp(text):
         regions = ', '.join(obj['regions'])
         url = 'http://dinosaurpictures.org/%s-pictures' % name
 
-        if not period or not eats or not regions:
+        if not period or not eats or not regions or not obj['shouldShowMap']:
             continue
 
         return {
@@ -35,6 +35,9 @@ def get_dinopix_resp(text):
                     'text': '*%s* lived in the %s and was a %s. It resided in %s.\n%s' \
                             % (name, period, eats, regions, url),
                     'image_url': obj['pics'][0]['url'],
+                },
+                {
+                    'image_url': obj['mapUrl'],
                 },
             ],
         }
