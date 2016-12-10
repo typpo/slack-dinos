@@ -17,19 +17,27 @@ app.debug = True
 
 
 def get_dinopix_resp(text):
-    resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random').read()
-    obj = json.loads(resp)
-    name = obj['name']
-    url = 'http://dinosaurpictures.org/%s-pictures' % name
-    return {
-        'attachments': [
-            {
-                'text': '*%s* lived in the %s and was a %s. It resided in %s.\n%s' \
-                        % (name, obj['period'], obj['eats'], ', '.join(obj['regions']), url),
-                'image_url': obj['pics'][0]['url'],
-            },
-        ],
-    }
+    while True:
+        resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random').read()
+        obj = json.loads(resp)
+        name = obj['name']
+        period = obj['period']
+        eats = obj['eats']
+        regions = ', '.join(obj['regions'])
+        url = 'http://dinosaurpictures.org/%s-pictures' % name
+
+        if not period or not eats or not regions:
+            continue
+
+        return {
+            'attachments': [
+                {
+                    'text': '*%s* lived in the %s and was a %s. It resided in %s.\n%s' \
+                            % (name, period, eats, regions, url),
+                    'image_url': obj['pics'][0]['url'],
+                },
+            ],
+        }
 
 @app.route('/', methods=['GET', 'POST'])
 def return_dinopix_image():
