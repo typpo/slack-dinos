@@ -1,6 +1,6 @@
 # slack-dinos
 
-Get a random image from DinosaurPictures.org in a Slack Channel, with Slack Outgoing WebHooks.  Heavily based on [slack-imgur](https://github.com/juanpabloaj/slack-imgur).
+Get a random image from DinosaurPictures.org in a Slack Channel, with Slack Outgoing WebHooks.  Basically copied from [slack-imgur](https://github.com/juanpabloaj/slack-imgur).
 
 ![pic](https://i.imgur.com/W5HbxaX.png)
 
