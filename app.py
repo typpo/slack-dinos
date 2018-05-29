@@ -37,8 +37,7 @@ def get_dinopix_resp(text):
                     'image_url': obj['pics'][0]['url'],
                 },
                 {
-                    'title': '%s globe' % (period),
-                    'title_link': 'http://dinosaurpictures.org/ancient-earth/view/%s' % name,
+                    'text': '%s\'s location on the globe in the %s: http://dinosaurpictures.org/ancient-earth/view/%s' % (name, period, name),
                     'image_url': 'http://image.thum.io/get/auth/1571-slack_dinos_key/noanimate/http://dinosaurpictures.org/ancient-earth/view/%s' % (name)
                 },
             ],
