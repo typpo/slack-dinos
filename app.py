@@ -37,6 +37,7 @@ def get_dinopix_resp(text):
                     'image_url': obj['pics'][0]['url'],
                 },
                 {
+                    'text': 'You can find %s here:' % (name),
                     'image_url': obj['mapUrl'],
                 },
             ],
