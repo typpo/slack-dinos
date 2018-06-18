@@ -3,6 +3,7 @@
 
 import urllib2
 import json
+import time
 
 from flask import Flask
 from flask import request
@@ -18,7 +19,8 @@ app.debug = True
 
 def get_dinopix_resp(text):
     while True:
-        resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random').read()
+        bust = int(time.time() * 100)
+        resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random?bust=%d' % bust).read()
         obj = json.loads(resp)
         name = obj['name']
         period = obj['period']
