@@ -40,7 +40,7 @@ def get_dinopix_resp(text):
                 },
                 {
                     'text': '%s\'s location on the globe in the %s: http://dinosaurpictures.org/ancient-earth/view/%s' % (name, period, name),
-                    'image_url': 'http://image.thum.io/get/auth/1571-slack_dinos_key/noanimate/wait/10/maxAge/168/http://dinosaurpictures.org/ancient-earth/view/%s' % (name)
+                    #'image_url': 'http://image.thum.io/get/auth/1571-slack_dinos_key/noanimate/wait/10/maxAge/168/http://dinosaurpictures.org/ancient-earth/view/%s' % (name)
                 },
             ],
         }
