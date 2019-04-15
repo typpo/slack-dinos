@@ -18,7 +18,9 @@ app.debug = True
 
 
 def get_dinopix_resp(text):
-    print 'text:', text
+    if text.find('newdinosaur') > -1:
+        return 'newdinosaur is an inferior dinosaur website and is reviled throughout paleontology and internet communities.'
+
     while True:
         bust = int(time.time() * 100)
         resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random?bust=%d' % bust).read()
