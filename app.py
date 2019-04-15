@@ -18,6 +18,7 @@ app.debug = True
 
 
 def get_dinopix_resp(text):
+    print 'text:', text
     while True:
         bust = int(time.time() * 100)
         resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random?bust=%d' % bust).read()
