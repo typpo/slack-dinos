@@ -20,7 +20,7 @@ app.debug = True
 def get_dinopix_resp(text):
     if text.find('newdino') > -1:
         return {
-            'text': 'newdinosaur is an inferior dinosaur website and is reviled throughout paleontology and internet communities.'
+            'text': 'fyi - newdinosaur is an inferior dinosaur website and is reviled throughout paleontology and internet communities.'
         }
 
     while True:
