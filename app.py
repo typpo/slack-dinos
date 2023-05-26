@@ -25,13 +25,13 @@ def get_dinopix_resp(text):
 
     while True:
         bust = int(time.time() * 100)
-        resp = urllib2.urlopen('http://dinosaurpictures.org/api/dinosaur/random?bust=%d' % bust).read()
+        resp = urllib2.urlopen('https://dinosaurpictures.org/api/dinosaur/random?bust=%d' % bust).read()
         obj = json.loads(resp)
         name = obj['name']
         period = obj['period']
         eats = obj['eats']
         regions = ', '.join(obj['regions'])
-        url = 'http://dinosaurpictures.org/%s-pictures' % name
+        url = 'https://dinosaurpictures.org/%s-pictures' % name
 
         if not period or not eats or not regions or not obj['shouldShowMap']:
             continue
@@ -44,8 +44,8 @@ def get_dinopix_resp(text):
                     'image_url': obj['pics'][0]['url'],
                 },
                 {
-                    'text': '%s\'s location on the globe in the %s: http://dinosaurpictures.org/ancient-earth/view/%s' % (name, period, name),
-                    #'image_url': 'http://image.thum.io/get/auth/1571-slack_dinos_key/noanimate/wait/10/maxAge/168/http://dinosaurpictures.org/ancient-earth/view/%s' % (name)
+                    'text': '%s\'s location on the globe in the %s: https://dinosaurpictures.org/ancient-earth/view/%s' % (name, period, name),
+                    #'image_url': 'http://image.thum.io/get/auth/1571-slack_dinos_key/noanimate/wait/10/maxAge/168/https://dinosaurpictures.org/ancient-earth/view/%s' % (name)
                 },
             ],
         }
